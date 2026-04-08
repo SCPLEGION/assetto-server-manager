@@ -3,7 +3,15 @@
 {{ define "title" }}Home{{ end }}
 
 {{ define "content" }}
-    {{ template "premium" dict "IsPremium" $.IsPremium }}
+    <section class="home-hero mb-4">
+        <div class="home-hero__content">
+            <span class="home-hero__eyebrow">Control Center</span>
+            <h1>Assetto Corsa Server Manager</h1>
+            <p>
+                Launch events, manage content, and tune your server from a single dashboard.
+            </p>
+        </div>
+    </section>
 
     {{ with .RaceDetails }}
         <div class="card mb-4">
@@ -71,9 +79,9 @@
         </div>
     {{ end }}
 
-    <h2>Races</h2>
+    <h2 class="home-section-title">Races</h2>
 
-    <div class="row">
+    <div class="row home-grid">
         {{ if WriteAccess }}
             <div class="col-md-6 col-lg-4 mt-4">
                 <a class="card" href="/quick">
@@ -177,9 +185,9 @@
 
     </div>
 
-    <h2 class="mt-4">Content</h2>
+    <h2 class="mt-4 home-section-title">Content</h2>
 
-    <div class="row">
+    <div class="row home-grid">
 
         <div class="col-md-6 col-lg-4 mt-4">
             <a class="card" href="/tracks">
@@ -233,9 +241,9 @@
 
     {{ if WriteAccess }}
 
-        <h2 class="mt-4">Server Management</h2>
+        <h2 class="mt-4 home-section-title">Server Management</h2>
 
-        <div class="row">
+        <div class="row home-grid">
 
             {{ if AdminAccess }}
                 <div class="col-md-6 col-lg-4 mt-4">
